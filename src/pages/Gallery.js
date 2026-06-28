@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-// Corrected import path
-import "./Gallery.css"; 
+import React, { useState, useEffect } from "react";
+import "./Gallery.css";
 
 /* IMAGES */
 const imgCtx = require.context(
