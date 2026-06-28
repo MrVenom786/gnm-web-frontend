@@ -1,0 +1,141 @@
+:root { 
+  --navy: #091726; 
+  --gold: #ab8141; 
+  --bg-light: #f8f9fa; 
+  --text-dark: #091726; 
+  --text-light: #ffffff;
+}
+
+.gnm-careers-page { 
+  background: #ffffff; 
+  padding-bottom: 0; /* Zeroed out to ensure page sits flush with footer */
+  width: 100%; 
+  overflow-x: hidden; 
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+}
+
+/* --- HERO VIDEO CONTAINER --- */
+.gnm-hero-video-container { 
+  height: 60vh; 
+  position: relative; 
+  background: var(--navy); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+}
+
+.hero-video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.hero-overlay-bg { position: absolute; width: 100%; height: 100%; background: rgba(9, 23, 38, 0.75); z-index: 2; }
+.hero-content-box { 
+  position: relative; z-index: 10; text-align: center; color: var(--text-light); padding: 20px; 
+  animation: heroFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+.hero-content-box h1 {
+  color: var(--text-light); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 15px; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-content-box h1 span {
+  color: var(--gold);
+}
+
+.hero-content-box p {
+  font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- WRAPPER --- */
+.content-wrapper { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+/* --- 3D GRID & CARDS (Navy with Gold) --- */
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  padding: 80px 0 60px;
+}
+
+.careers-card-3d { 
+  background: var(--navy); 
+  padding: 40px; 
+  border-radius: 20px;
+  border-left: 8px solid var(--gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.careers-card-3d:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.gold-heading {
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(171, 129, 65, 0.3);
+  padding-bottom: 15px;
+}
+
+.info-list { list-style: none; padding: 0; margin: 0; }
+.info-list li {
+  display: flex; align-items: center; gap: 15px; padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  color: #ffffff; font-size: 1.05rem; font-weight: 500;
+}
+
+/* --- POSITIONS SECTION --- */
+.positions-section { padding: 20px 0 60px; }
+.positions-section h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 30px; text-align: center; }
+
+.positions-grid { display: flex; flex-direction: column; gap: 15px; max-width: 900px; margin: 0 auto; }
+.position-card-3d {
+  background: var(--bg-light); border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  cursor: pointer; overflow: hidden; transition: all 0.3s ease; border-left: 5px solid var(--navy);
+}
+
+.position-card-3d.open { background: #ffffff; border-left: 5px solid var(--gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.position-header { padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; }
+.position-header h3 { color: var(--navy); font-size: 1.3rem; margin: 0; }
+
+.position-content { max-height: 0; opacity: 0; padding: 0 25px; transition: all 0.4s ease-in-out; }
+.position-content.show { max-height: 200px; opacity: 1; padding: 0 25px 25px; }
+
+/* --- CTA SECTION --- */
+.gnm-cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f6f8;
+  border-radius: 16px;
+  margin-top: 20px;
+  margin-bottom: 0; /* Ensures flush fit to footer */
+}
+
+.gnm-cta-section h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 15px; }
+.gnm-cta-section p { font-size: 1.2rem; color: #555; margin-bottom: 25px; }
+
+/* --- COMPACT GOLD PILL BUTTON --- */
+.apply-btn-pill {
+  background: var(--gold); color: var(--text-light); padding: 12px 32px; font-weight: 700;
+  border: none; border-radius: 50px; text-decoration: none; display: inline-block; transition: 0.3s;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.apply-btn-pill:hover { transform: translateY(-3px); background: #c49a5b; box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+
+.small-btn { padding: 10px 24px; font-size: 0.9rem; }
+
+/* --- ANIMATIONS --- */
+.reveal-up { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal-up.active { opacity: 1; transform: translateY(0); }

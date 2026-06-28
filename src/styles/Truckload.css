@@ -1,0 +1,260 @@
+:root { 
+  --navy: #091726; 
+  --gold: #ab8141; 
+  --bg-light: #f8f9fa; 
+  --text-dark: #091726; 
+  --text-light: #ffffff;
+}
+
+.gnm-truckload-page { 
+  background: #ffffff; 
+  padding-bottom: 80px; 
+  width: 100%; 
+  overflow-x: hidden; 
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+}
+
+/* --- HERO SECTION --- */
+.truckload-hero { 
+  height: 60vh; 
+  position: relative; 
+  background: var(--navy); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+}
+
+.hero-video { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.hero-overlay-bg { position: absolute; width: 100%; height: 100%; background: rgba(9, 23, 38, 0.75); z-index: 2; }
+.hero-content-box { 
+  position: relative; z-index: 10; text-align: center; color: var(--text-light); padding: 20px; 
+  animation: heroFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+.hero-content-box h1 {
+  color: var(--gold); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; margin-bottom: 15px; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-content-box p {
+  font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- WRAPPER & INTRO --- */
+.content-wrapper { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.truckload-intro {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.truckload-intro p {
+  font-size: 1.3rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- SLIDESHOW & STRIP --- */
+.truckload-slideshow-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.truckload-slideshow-section h2, .truckload-features h2 {
+  color: var(--navy);
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.main-slideshow-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 4px solid var(--navy);
+}
+
+.main-slideshow-frame img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* New Modern Features Strip */
+.main-features-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.strip-item {
+  background: var(--navy);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strip-item span {
+  font-size: 1.2rem;
+}
+
+/* --- 3D FEATURES GRID --- */
+.truckload-features {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-card-3d {
+  background: var(--bg-light);
+  padding: 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--navy);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.feature-card-3d span {
+  color: var(--gold);
+}
+
+.feature-card-3d:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  background: #ffffff;
+}
+
+/* --- WHY GNM (DARK 3D CARD) --- */
+.truckload-why {
+  padding: 40px 0;
+}
+
+.why-box-3d {
+  background: var(--navy);
+  color: var(--text-light);
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(9, 23, 38, 0.2);
+  border-left: 8px solid var(--gold);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-box-3d h2 {
+  color: var(--gold);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.why-box-3d p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- CTA SECTION --- */
+.truckload-cta {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f6f8;
+  border-radius: 16px;
+  margin-top: 40px;
+}
+
+.truckload-cta h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 15px; }
+.truckload-cta p { font-size: 1.2rem; color: #555; margin-bottom: 25px; }
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* --- COMPACT GOLD PILL BUTTON --- */
+.apply-btn-pill {
+  background: var(--gold); 
+  color: var(--text-light); 
+  padding: 12px 32px;
+  font-weight: 700; 
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+  display: inline-block; 
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.apply-btn-pill:hover { 
+  transform: translateY(-3px); 
+  background: #c49a5b; 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Outline version of the pill button */
+.outline-btn {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--gold);
+}
+
+.outline-btn:hover {
+  background: var(--gold);
+  color: var(--text-light);
+}
+
+/* --- ANIMATIONS --- */
+.reveal-up { 
+  opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.reveal-up.active { 
+  opacity: 1; transform: translateY(0); 
+}
+
+@media (max-width: 768px) {
+  .main-slideshow-frame img { height: 300px; }
+  .strip-item { width: 100%; justify-content: center; }
+}

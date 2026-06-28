@@ -1,0 +1,25 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff; /* Use white for general readability */
+  color: #333;
+}
+
+/* Ensure the layout takes up at least the full screen */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This pushes the footer to the bottom */
+.content {
+  flex: 1;
+  width: 100%;
+}

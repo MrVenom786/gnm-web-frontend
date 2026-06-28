@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+/* ===============================
+   FOOTER GLOBALS
+================================ */
+.site-footer {
+  background-color: #091726; /* Deep navy matching the navbar */
+  color: #f0f4f8;
+  padding: 40px 4vw 30px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-footer.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Aligns items to the bottom like the mockup */
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ===============================
+   LEFT SECTION
+================================ */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+}
+
+.footer-brand {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #dbe4ed; /* Light icy blue/gray */
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+}
+
+.footer-info-row {
+  display: flex;
+  gap: 30px;
+  font-size: 0.85rem;
+  color: #a0aec0;
+  line-height: 1.6;
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.contact-block {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-block p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-icon {
+  color: #ab8141; /* Gold */
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-block .info-icon {
+  margin-top: 0;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: #718096;
+  margin: 10px 0 0 0;
+}
+
+/* ===============================
+   MIDDLE SECTION
+================================ */
+.footer-middle {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px; /* Aligns it slightly above the bottom */
+}
+
+.footer-tagline {
+  font-family: 'Playball', cursive; /* Script font matching the mockup */
+  color: #ab8141; /* Gold */
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   RIGHT SECTION
+================================ */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ab8141;
+  color: #ab8141;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #ab8141;
+  color: #091726;
+  transform: translateY(-3px);
+}
+
+.quick-links-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quick-links-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f0f4f8;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 5px;
+}
+
+.quick-links-grid a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.quick-links-grid a:hover {
+  color: #ab8141;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-info-row {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .info-block {
+    justify-content: center;
+  }
+
+  .contact-block p {
+    justify-content: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .quick-links-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

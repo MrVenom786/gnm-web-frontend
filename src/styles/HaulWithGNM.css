@@ -1,0 +1,227 @@
+:root {
+  --navy: #091726;
+  --gold: #ab8141;
+  --bg-light: #f8f9fa;
+  --red: #d32f2f;
+}
+
+.gnm-quote-page {
+  background: #ffffff;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 80px;
+}
+
+/* --- MINI HERO HEADER --- */
+.gnm-hero-mini {
+  background: var(--navy);
+  padding: 80px 20px 120px; /* Extra padding bottom for the overlap */
+  text-align: center;
+  position: relative;
+}
+
+.hero-anim {
+  animation: heroFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gnm-hero-mini h1 {
+  color: var(--gold);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.gnm-hero-mini p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- CENTERED LAYOUT --- */
+.quote-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+  margin-top: -70px; /* Pulls the card up over the hero */
+}
+
+.quote-centered-layout {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- FORM CARD --- */
+.form-card-3d {
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border-top: 8px solid var(--gold);
+  width: 100%;
+  max-width: 850px; /* Keeps the form from getting too wide */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+}
+
+.form-header h2 {
+  color: var(--navy);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.gnm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.gnm-form input,
+.gnm-form textarea {
+  width: 100%;
+  padding: 18px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  transition: all 0.3s;
+  background: var(--bg-light);
+}
+
+.gnm-form input:focus,
+.gnm-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(171, 129, 65, 0.2);
+  background: #ffffff;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10px 0;
+  padding: 20px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.checkbox-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.checkbox-line input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.form-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.form-message.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+/* --- 3D BUTTON --- */
+.apply-btn-3d {
+  background: var(--gold);
+  color: #fff;
+  padding: 20px 40px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 0 #8e6a35;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.apply-btn-3d:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #8e6a35;
+}
+
+.apply-btn-3d:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #8e6a35;
+  background: #c49a5b;
+}
+
+.apply-btn-3d:disabled {
+  background: #ccc;
+  box-shadow: 0 6px 0 #aaa;
+  cursor: not-allowed;
+}
+
+/* --- ANIMATIONS & RESPONSIVE --- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .form-card-3d {
+    padding: 30px 20px;
+  }
+  .gnm-hero-mini {
+    padding: 60px 20px 100px;
+  }
+}

@@ -1,0 +1,83 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BRAND VARIABLES (GLOBAL GNM)
+========================= */
+:root {
+  --gnm-navy: #091726;   /* Primary Brand Color */
+  --gnm-gold: #ab8141;   /* Accent Color */
+  --gnm-white: #ffffff;
+  --gnm-light: #f0f4f8;
+}
+
+/* =========================
+   GLOBAL FONT SYSTEM
+========================= */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--gnm-white);
+  color: var(--gnm-navy);
+  line-height: 1.6;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+/* =========================
+   SELECTION COLOR
+========================= */
+::selection {
+  background: var(--gnm-gold);
+  color: white;
+}
+
+/* =========================
+   SCROLLBAR (CLEAN UI)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gnm-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gnm-navy);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gnm-gold);
+}

@@ -1,0 +1,118 @@
+:root { 
+  --navy: #091726; 
+  --gold: #ab8141; 
+  --bg-light: #f8f9fa; 
+}
+
+.gnm-gallery-page { 
+  background: #ffffff; 
+  padding-bottom: 0; 
+  width: 100%; 
+  overflow-x: hidden; 
+}
+
+/* --- SLIDESHOW HERO --- */
+.gallery-header-slideshow {
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active { opacity: 1; }
+
+.slide-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(9, 23, 38, 0.7);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: white; text-align: center; padding: 20px;
+}
+
+.slide-overlay h1 { font-size: 3.5rem; color: var(--gold); margin-bottom: 10px; }
+
+/* --- FILTER TABS --- */
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 40px 20px;
+}
+
+.filter-btn {
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: 2px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: white;
+}
+
+/* --- MASONRY GRID --- */
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 0 20px 40px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.gallery-item img, .gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img, .gallery-item:hover video {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(9, 23, 38, 0.8));
+  color: white;
+  font-weight: 600;
+}
+
+/* --- LIGHTBOX & MODAL --- */
+.lightbox, .video-modal {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+.video-modal video { max-width: 90%; max-height: 90%; }

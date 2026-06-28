@@ -1,0 +1,213 @@
+:root { 
+  --navy: #091726; 
+  --gold: #ab8141; 
+  --bg-light: #f8f9fa; 
+  --text-dark: #091726; 
+  --text-light: #ffffff;
+}
+
+.gnm-eo-page { 
+  background: #ffffff; 
+  padding-bottom: 80px; 
+  width: 100%; 
+  overflow-x: hidden; 
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+}
+
+/* --- HERO SECTION --- */
+.eo-hero { 
+  height: 60vh; 
+  position: relative; 
+  background: var(--navy); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden; 
+}
+
+.hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.hero-overlay-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(9, 23, 38, 0.75); z-index: 2; }
+.hero-content-box { 
+  position: relative; z-index: 10; text-align: center; color: var(--text-light); padding: 20px; 
+  animation: heroFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+.hero-content-box h1 {
+  color: var(--gold); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 15px; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-content-box p {
+  font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- COMPACT GOLD PILL BUTTON --- */
+.apply-btn-pill {
+  background: var(--gold); 
+  color: var(--text-light); 
+  padding: 12px 32px;
+  font-weight: 700; 
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+  display: inline-block; 
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.apply-btn-pill:hover { 
+  transform: translateY(-3px); 
+  background: #c49a5b; 
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* --- WRAPPER & INTRO --- */
+.content-wrapper { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.eo-intro {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.eo-intro p {
+  font-size: 1.4rem;
+  color: #444;
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.eo-intro strong {
+  color: var(--navy);
+}
+
+/* --- SHOWCASE (SIDE-BY-SIDE) --- */
+.eo-main-showcase {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0 80px 0;
+}
+
+.eo-main-image-frame {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 4px solid var(--navy);
+}
+
+.eo-main-image-frame img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.eo-main-text {
+  flex: 1;
+}
+
+.eo-main-text h2 {
+  color: var(--navy);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.eo-main-text p {
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* --- 3D FEATURES GRID --- */
+.eo-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px 0 60px 0;
+}
+
+.eo-feature-card-3d {
+  background: var(--bg-light);
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  border-bottom: 5px solid var(--gold);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.eo-feature-card-3d:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  background: #ffffff;
+}
+
+.eo-feature-card-3d h3 {
+  color: var(--navy);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.eo-feature-card-3d h3 span {
+  font-size: 2rem;
+}
+
+.eo-feature-card-3d p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- CTA SECTION --- */
+.eo-cta {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f6f8;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+
+.eo-cta h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 15px; }
+.eo-cta p { font-size: 1.2rem; color: #555; margin-bottom: 25px; }
+
+/* --- ANIMATIONS --- */
+.reveal-up { 
+  opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+
+.reveal-up.active { 
+  opacity: 1; transform: translateY(0); 
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+  .eo-main-showcase {
+    flex-direction: column;
+    text-align: center;
+  }
+  .eo-main-image-frame img {
+    height: 300px;
+  }
+}

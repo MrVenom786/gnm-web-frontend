@@ -1,0 +1,142 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --navy-bg: #091726;        
+  --gold-text: #c49a5b;      
+  --gold-btn: #ab8141;       
+  --gold-btn-hover: #9c7336; 
+  --text-light: #f0f4f8;     
+  --dropdown-bg: #122338;    
+}
+
+* { box-sizing: border-box; }
+
+/* ================= HEADER ================= */
+header {
+  position: relative;
+  z-index: 1000;
+  background: var(--navy-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 8px 4vw; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+  gap: 20px;
+}
+
+.logo-img { width: clamp(100px, 15vw, 180px); height: auto; cursor: pointer; }
+
+.right-links { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 20px; }
+
+.quick-links { display: flex; align-items: center; gap: 20px; }
+.quick-links a { 
+    text-decoration: none; font-weight: 500; font-size: 16px; 
+    color: var(--text-light); transition: color 0.3s ease; white-space: nowrap;
+}
+.quick-links a:hover { color: var(--gold-text); }
+
+.gold-btn {
+  background: var(--gold-btn); color: #fff !important; padding: 8px 20px;
+  border-radius: 4px; font-weight: 600; font-size: 16px; white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.mobile-menu-btn {
+  display: none; background: none; border: none; font-size: 28px;
+  cursor: pointer; color: var(--gold-text); padding: 0; margin-left: 10px;
+}
+
+/* ================= MAIN NAV ================= */
+.main-nav { display: flex; justify-content: flex-end; width: 100%; }
+
+.right-nav { 
+    display: flex; list-style: none; gap: 30px; 
+    font-size: 17px; font-weight: 600; margin: 0; padding: 5px 0; 
+}
+
+.right-nav li { position: relative; }
+.right-nav li span { cursor: pointer; color: var(--gold-text); transition: opacity 0.3s ease; }
+
+/* ================= DROPDOWN ================= */
+.dropdown {
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
+  margin-top: 10px;
+  background: #ffffff; 
+  border-top: 3px solid var(--gold-btn);
+  border-radius: 0 0 6px 6px; 
+  padding: 10px 0; 
+  min-width: 250px;
+  /* Add this to prevent overflow */
+  max-width: 300px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+  z-index: 9999;
+}
+
+.dropdown a {
+  display: block; 
+  padding: 12px 20px; 
+  font-weight: 500; 
+  font-size: 15px;
+  color: var(--navy-bg); 
+  transition: all 0.2s ease;
+  white-space: normal; /* Allows text to wrap */
+  line-height: 1.4;
+}
+
+/* FIX: Align the last dropdown to the right so it stays in frame */
+.right-nav li:last-child .dropdown {
+  left: auto; /* Remove left positioning */
+  right: 0;   /* Align to the right edge of the parent menu item */
+}
+
+/* MOBILE FIX */
+@media (max-width: 950px) {
+  .dropdown {
+    position: static;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: none;
+    border-top: none;
+  }
+  .dropdown a {
+    color: var(--navy-bg);
+    padding-left: 40px;
+  }
+  /* Reset the right-alignment for mobile */
+  .right-nav li:last-child .dropdown {
+    right: auto;
+    left: 0;
+  }
+}
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 950px) {
+  .mobile-menu-btn { display: block; }
+  .right-links { margin-right: 40px; }
+  .main-nav { 
+      position: absolute; top: 100%; left: 0; width: 100%; 
+      display: none; background: var(--navy-bg); border-top: 1px solid #333;
+  }
+  .main-nav.open { display: block; }
+  .right-nav { flex-direction: column; gap: 0; padding: 10px 0; }
+  .right-nav li span { display: block; padding: 15px 4vw; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  
+  /* Fix: Dropdown flows naturally in mobile */
+  .dropdown {
+    position: static;
+    width: 100%;
+    margin-top: 0;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.1);
+    border-top: none;
+  }
+  .dropdown a { padding-left: 40px; }
+}
