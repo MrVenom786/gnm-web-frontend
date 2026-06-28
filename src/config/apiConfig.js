@@ -17,13 +17,13 @@ export const getApiUrl = () => {
   // ⚠️ CUSTOM DOMAIN (rgm/gnm production domain)
   if (hostname === "rgminc.ca") {
     console.log("🚀 Using PRODUCTION backend (Custom Domain)");
-    return "https://rgm-web-backend.vercel.app";
+    return "https://gnm-web-backend.vercel.app";
   }
 
   // 🚀 VERCEL DEPLOYMENT
   if (hostname.includes("vercel.app")) {
     console.log("🚀 Using VERCEL backend");
-    return "https://rgm-web-backend.vercel.app";
+    return "https://gnm-web-backend.vercel.app";
   }
 
   // 🔌 ENV FALLBACK (best practice for scaling)
