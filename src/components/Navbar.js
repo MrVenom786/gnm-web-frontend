@@ -104,7 +104,7 @@ const Navbar = () => {
                   : handleClick("join")
               }
             >
-              Join the RGM family ▾
+              Join GNM Transportation ▾
             </span>
 
             {(active === "join" || mobileSubMenu === "join") && (
@@ -158,7 +158,7 @@ const Navbar = () => {
                   : handleClick("logistics")
               }
             >
-              RGM Logistics ▾
+              GNM Logistics ▾
             </span>
 
             {(active === "logistics" || mobileSubMenu === "logistics") && (
