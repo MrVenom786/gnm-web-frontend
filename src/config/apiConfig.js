@@ -1,45 +1,54 @@
 /**
- * API Configuration - Auto environment detection (GNM optimized)
+ * API Configuration - Auto Environment Detection
  */
+
+const PRODUCTION_API = "https://gnm-web-backend.vercel.app";
+const LOCAL_API = "http://localhost:5000";
 
 export const getApiUrl = () => {
   const hostname = window.location.hostname;
 
-  // ✅ LOCAL DEVELOPMENT (strict)
+  // ✅ Local Development
   if (
     hostname === "localhost" ||
     hostname === "127.0.0.1"
   ) {
     console.log("🔧 Using LOCAL backend");
-    return "http://localhost:5000";
+    return LOCAL_API;
   }
 
-  // ⚠️ CUSTOM DOMAIN (rgm/gnm production domain)
-  if (hostname === "rgminc.ca") {
-    console.log("🚀 Using PRODUCTION backend (Custom Domain)");
-    return "https://gnm-web-backend.vercel.app";
+  // ✅ Production Custom Domain
+  if (
+    hostname === "gnmtransport.com" ||
+    hostname === "www.gnmtransport.com"
+  ) {
+    console.log("🚀 Using PRODUCTION backend (gnmtransport.com)");
+    return PRODUCTION_API;
   }
 
-  // 🚀 VERCEL DEPLOYMENT
-  if (hostname.includes("vercel.app")) {
+  // ✅ Vercel Frontend Deployments
+  if (
+    hostname === "gnm-web-frontend.vercel.app" ||
+    hostname.endsWith(".vercel.app")
+  ) {
     console.log("🚀 Using VERCEL backend");
-    return "https://gnm-web-backend.vercel.app";
+    return PRODUCTION_API;
   }
 
-  // 🔌 ENV FALLBACK (best practice for scaling)
+  // ✅ Environment Variable (optional)
   if (process.env.REACT_APP_API_URL) {
     console.log("🔌 Using ENV backend URL");
     return process.env.REACT_APP_API_URL;
   }
 
-  // ⚠️ FINAL FALLBACK
-  console.warn("⚠️ API URL fallback to localhost");
-  return "http://localhost:5000";
+  // ✅ Final fallback
+  console.warn("⚠️ Falling back to LOCAL backend");
+  return LOCAL_API;
 };
 
 export const API_URL = getApiUrl();
 
-console.log("🌐 GNM API Config loaded:", {
+console.log("🌐 GNM API Config:", {
   hostname: window.location.hostname,
   api: API_URL,
 });
