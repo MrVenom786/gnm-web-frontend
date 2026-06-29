@@ -73,12 +73,12 @@ function Founder() {
               <p className="quote-signoff">— Chairperson Gurpreet Singh</p>
               
               <div className="founder-contact">
-                <a href="tel:+14372300451" className="founder-phone">
-                  +1 (437) 230-0451
+                <a href="tel:+16479629995" className="founder-phone">
+                  +1 (647) 962-9995
                 </a>
                 <span className="contact-separator"> | </span>
-                <a href="mailto:info@gnmlogistics.com" className="founder-email">
-                  info@gnmlogistics.com
+                <a href="mailto:gurpreetsaini2885@gmail.com" className="founder-email">
+                  gurpreetsaini2885@gmail.com
                 </a>
               </div>
             </div>
