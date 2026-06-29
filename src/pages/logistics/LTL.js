@@ -4,11 +4,11 @@ import "../../styles/LTL.css";
 
 /* VIDEO & IMAGES */
 import heroVideo from "../../assets/gallery/videos/hero.mp4";
-import g34 from "../../assets/gallery/images/gallery53.jpg";
-import g33 from "../../assets/gallery/images/gallery52.jpg";
-import g32 from "../../assets/gallery/images/gallery51.jpg";
-import g31 from "../../assets/gallery/images/gallery63.jpg";
-import g30 from "../../assets/gallery/images/gallery62.jpg";
+import g34 from "../../assets/gallery/images/gallery15.jpg";
+import g33 from "../../assets/gallery/images/gallery16.jpg";
+import g32 from "../../assets/gallery/images/gallery17.jpg";
+import g31 from "../../assets/gallery/images/gallery18.jpg";
+import g30 from "../../assets/gallery/images/gallery19.jpg";
 
 function LTL() {
   const mainImages = [g34, g33, g32, g31, g30];
