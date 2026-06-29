@@ -47,15 +47,15 @@ const Footer = () => {
             <div className="info-block address-block">
               <FaMapMarkerAlt className="info-icon" />
               <p>
-                Address, 784 Homer Street,<br />
-                New York, NY 33305
+                Address, 20 RNFORD CRESENT,<br />
+                BRAMPTON, ON L7A4E8
               </p>
             </div>
 
             {/* Phone & Email */}
             <div className="info-block contact-block">
               <p>
-                <FaPhoneAlt className="info-icon" /> Phone: (113) 223-7990
+                <FaPhoneAlt className="info-icon" /> Phone: +1 647 962 9995
               </p>
               <p>
                 <FaEnvelope className="info-icon" /> Email: info@gnmtransport.com
