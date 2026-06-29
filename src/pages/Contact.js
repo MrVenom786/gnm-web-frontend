@@ -22,7 +22,7 @@ function Contact() {
         <div className="card">
           <FaPhoneAlt className="icon" />
           <h3>Call Us</h3>
-          <a href="tel:+14378821734">+1 437 882 1734</a>
+          <a href="tel:+16479629995">+1 647 962 9995</a>
         </div>
         <div className="card">
           <FaEnvelope className="icon" />
