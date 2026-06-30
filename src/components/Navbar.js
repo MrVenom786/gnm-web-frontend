@@ -4,12 +4,11 @@ import "./Navbar.css";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [active, setActive] = useState(null); // desktop hover
+  const [active, setActive] = useState(null);
   const [locked, setLocked] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState(null);
 
-  // Auto-close mobile menu if window resizes to desktop width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 950 && mobileMenuOpen) {
@@ -20,10 +19,8 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [mobileMenuOpen]);
 
-  /* ================= DESKTOP ================= */
   const handleClick = (name) => {
     if (mobileMenuOpen) return;
-
     if (active === name && locked) {
       setActive(null);
       setLocked(false);
@@ -41,10 +38,9 @@ const Navbar = () => {
     if (!locked && !mobileMenuOpen) setActive(null);
   };
 
-  /* ================= MOBILE ================= */
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prev) => !prev);
-    setMobileSubMenu(null); // close all submenus
+    setMobileSubMenu(null);
   };
 
   const toggleMobileSubMenu = (name) => {
@@ -59,150 +55,112 @@ const Navbar = () => {
   };
 
   return (
-    <header>
-      {/* ================= TOP BAR ================= */}
-      <div className="topbar">
-        <div className="logo-section">
+    <header className="gnm-master-header">
+      <div className="gnm-header-container">
+        
+        {/* ================= LOGO COLUMN ================= */}
+        <div className="gnm-logo-col">
           <Link to="/" onClick={closeMenu}>
-            <img src={logo} alt="Logo" className="logo-img" />
+            <img src={logo} alt="GNM Logo" className="gnm-logo-img" />
           </Link>
         </div>
 
-        <div className="right-links">
-          <div className="quick-links">
-            <Link to="/" onClick={closeMenu}>Home</Link>
-            <Link to="/careers" onClick={closeMenu}>Careers</Link>
-            <Link to="/gallery" onClick={closeMenu}>Gallery</Link>
-            <Link to="/contact" onClick={closeMenu}>Contact</Link>
+        {/* ================= NAV COLUMN ================= */}
+        <div className="gnm-nav-col">
+          
+          {/* --- TOP ROW --- */}
+          <div className="gnm-top-row">
+            <div className="gnm-quick-links">
+              <Link to="/" onClick={closeMenu}>Home</Link>
+              <Link to="/careers" onClick={closeMenu}>Careers</Link>
+              <Link to="/gallery" onClick={closeMenu}>Gallery</Link>
+              <Link to="/contact" onClick={closeMenu}>Contact Us</Link>
+            </div>
+            <div className="gnm-action-area">
+              <Link className="gnm-gold-btn" to="/join/apply" onClick={closeMenu}>
+                APPLY NOW
+              </Link>
+              <button className="gnm-mobile-toggle" onClick={toggleMobileMenu}>
+                ☰
+              </button>
+            </div>
           </div>
-          <Link className="gold-btn" to="/join/apply" onClick={closeMenu}>
-            Apply Now
-          </Link>
-          <button
-            className="mobile-menu-btn"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
+
+          {/* --- BOTTOM ROW (MAIN NAV) --- */}
+          <nav className={`gnm-bottom-row ${mobileMenuOpen ? "open" : ""}`}>
+            <ul className="gnm-main-nav-list">
+              
+              {/* SERVICES */}
+              <li onMouseEnter={() => handleMouseEnter("services")} onMouseLeave={handleMouseLeave}>
+                <span onClick={() => mobileMenuOpen ? toggleMobileSubMenu("services") : handleClick("services")}>
+                  {/* Globe Icon */}
+                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  GLOBAL FREIGHT SERVICES ▾
+                </span>
+                {(active === "services" || mobileSubMenu === "services") && (
+                  <div className="gnm-dropdown">
+                    {/* Swapped order here */}
+                    <Link to="/join/apply" onClick={closeMenu}>Apply Today</Link>
+                    <Link to="/solutions" onClick={closeMenu}>Solutions</Link>
+                  </div>
+                )}
+              </li>
+
+              {/* LOGISTICS */}
+              <li onMouseEnter={() => handleMouseEnter("logistics")} onMouseLeave={handleMouseLeave}>
+                <span onClick={() => mobileMenuOpen ? toggleMobileSubMenu("logistics") : handleClick("logistics")}>
+                  {/* Gears Icon */}
+                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  RGM LOGISTICS SOLUTIONS ▾
+                </span>
+                {(active === "logistics" || mobileSubMenu === "logistics") && (
+                  <div className="gnm-dropdown">
+                    <Link to="/logistics/ltl" onClick={closeMenu}>LTL</Link>
+                    <Link to="/logistics/truckload" onClick={closeMenu}>Truckload</Link>
+                  </div>
+                )}
+              </li>
+
+              {/* NETWORK & FLEET */}
+              <li onMouseEnter={() => handleMouseEnter("network")} onMouseLeave={handleMouseLeave}>
+                <span onClick={() => mobileMenuOpen ? toggleMobileSubMenu("network") : handleClick("network")}>
+                  {/* Email/Network Icon */}
+                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                  OUR NETWORK & FLEET ▾
+                </span>
+                {(active === "network" || mobileSubMenu === "network") && (
+                  <div className="gnm-dropdown">
+                    <Link to="/join/inexperienced" onClick={closeMenu}>Inexperienced Class A Drivers</Link>
+                    <Link to="/join/experienced" onClick={closeMenu}>Experienced Class A Drivers</Link>
+                    <Link to="/join/openings" onClick={closeMenu}>Current Openings</Link>
+                    <Link to="/join/pay" onClick={closeMenu}>Pay</Link>
+                    <Link to="/join/equipment" onClick={closeMenu}>Equipments</Link>
+                    <Link to="/join/benefits" onClick={closeMenu}>Benefits</Link>
+                  </div>
+                )}
+              </li>
+
+              {/* COMPANY (MOVED TO THE END) */}
+              <li onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
+                <span onClick={() => mobileMenuOpen ? toggleMobileSubMenu("company") : handleClick("company")}>
+                  {/* Building Icon */}
+                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 21h18M5 21V7l8-4v18M13 3l8 4v14M9 9v.01M9 13v.01M9 17v.01M17 11v.01M17 15v.01"/></svg>
+                  OUR COMPANY ▾
+                </span>
+                {(active === "company" || mobileSubMenu === "company") && (
+                  <div className="gnm-dropdown">
+                    <Link to="/company/employee-ownership" onClick={closeMenu}>Employee Ownership</Link>
+                    <Link to="/company/who-we-are" onClick={closeMenu}>Who We Are</Link>
+                    <Link to="/company/responsibility" onClick={closeMenu}>Corporate Responsibility</Link>
+                    <Link to="/company/founder" onClick={closeMenu}>About GNM</Link>
+                  </div>
+                )}
+              </li>
+
+            </ul>
+          </nav>
         </div>
       </div>
-
-      {/* ================= MAIN NAV ================= */}
-      <nav className={`main-nav ${mobileMenuOpen ? "open" : ""}`}>
-        <ul className="right-nav">
-
-          {/* JOIN RGM */}
-          <li
-            onMouseEnter={() => handleMouseEnter("join")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span
-              onClick={() =>
-                mobileMenuOpen
-                  ? toggleMobileSubMenu("join")
-                  : handleClick("join")
-              }
-            >
-              Join GNM Transportation ▾
-            </span>
-
-            {(active === "join" || mobileSubMenu === "join") && (
-              <div className="dropdown">
-                <Link to="/join/apply" onClick={closeMenu}>Apply Today</Link>
-                <Link to="/join/inexperienced" onClick={closeMenu}>
-                  Inexperienced Class A Professional Drivers
-                </Link>
-                <Link to="/join/experienced" onClick={closeMenu}>
-                  Experienced Class A Professional Drivers
-                </Link>
-                <Link to="/join/openings" onClick={closeMenu}>Current Openings</Link>
-                <Link to="/join/pay" onClick={closeMenu}>Pay</Link>
-                <Link to="/join/equipment" onClick={closeMenu}>Equipments</Link>
-                <Link to="/join/benefits" onClick={closeMenu}>Benefits</Link>
-              </div>
-            )}
-          </li>
-
-          {/* TRANSPORT */}
-          <li
-            onMouseEnter={() => handleMouseEnter("transport")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span
-              onClick={() =>
-                mobileMenuOpen
-                  ? toggleMobileSubMenu("transport")
-                  : handleClick("transport")
-              }
-            >
-              Transportation Solutions ▾
-            </span>
-
-            {(active === "transport" || mobileSubMenu === "transport") && (
-              <div className="dropdown">
-                <Link to="/solutions" onClick={closeMenu}>Solutions</Link>
-              </div>
-            )}
-          </li>
-
-          {/* LOGISTICS */}
-          <li
-            onMouseEnter={() => handleMouseEnter("logistics")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span
-              onClick={() =>
-                mobileMenuOpen
-                  ? toggleMobileSubMenu("logistics")
-                  : handleClick("logistics")
-              }
-            >
-              GNM Logistics ▾
-            </span>
-
-            {(active === "logistics" || mobileSubMenu === "logistics") && (
-              <div className="dropdown">
-                <Link to="/logistics/ltl" onClick={closeMenu}>LTL</Link>
-                <Link to="/logistics/truckload" onClick={closeMenu}>Truckload</Link>
-              </div>
-            )}
-          </li>
-
-          {/* COMPANY */}
-<li
-  onMouseEnter={() => handleMouseEnter("company")}
-  onMouseLeave={handleMouseLeave}
->
-  <span
-    onClick={() =>
-      mobileMenuOpen
-        ? toggleMobileSubMenu("company")
-        : handleClick("company")
-    }
-  >
-    Our Company ▾
-  </span>
-
-  {(active === "company" || mobileSubMenu === "company") && (
-    <div className="dropdown">
-      <Link to="/company/employee-ownership" onClick={closeMenu}>
-        Employee Ownership
-      </Link>
-      {/* UPDATED PATH BELOW TO MATCH App.js */}
-      <Link to="/company/who-we-are" onClick={closeMenu}>Who We Are</Link>
-      <Link to="/company/responsibility" onClick={closeMenu}>
-        Corporate Responsibility
-      </Link>
-      <Link to="/company/founder" onClick={closeMenu}>
-        About GNM
-      </Link>
-    </div>
-  )}
-</li>
-
-        </ul>
-      </nav>
     </header>
   );
 };
