@@ -55,10 +55,10 @@ const Home = () => {
           <div className="hero-actions">
             {/* UPDATED: Compact Gold Pill Buttons */}
             <button className="apply-btn-pill" onClick={() => navigate("/join/apply")}>
-              Join the GNM Family
+              Where Drivers Matter—Join GNM
             </button>
             <button className="apply-btn-pill outline-btn" onClick={() => navigate("/haul")}>
-              Haul with GNM
+              Drive with GNM
             </button>
           </div>
         </div>
