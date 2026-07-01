@@ -59,7 +59,11 @@ function Benefits() {
           <div className="benefits-card-3d">
             <h3 className="gold-heading">Benefits & Compensation</h3>
             <ul className="benefits-list">
+              <li><span>💰</span> Competitive pay with performance incentives</li>
+              <li><span>🏥</span> Health insurance coverage support</li>
               <li><span>🔒</span> Optional disability coverage</li>
+              <li><span>🌴</span> Annual travel insurance reimbursement</li>
+              <li><span>🚚</span> Weekly pay cycles</li>
               <li><span>📈</span> Paid detention, layover, and waiting time</li>
             </ul>
           </div>
