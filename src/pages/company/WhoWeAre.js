@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../../styles/WhoWeAre.css";
 
-// Hero image
-const heroImage = require("../../assets/images/hero/hero3.jpg");
+// Hero video import
+import heroVideo from "../../assets/gallery/videos/hero.mp4";
 
 // Gallery images for main section
 const galleryImages = [];
@@ -48,11 +48,12 @@ function WhoWeAre() {
   return (
     <div className="gnm-company-container">
 
-      {/* HERO SECTION */}
-      <section
-        className="company-hero"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      {/* HERO SECTION WITH VIDEO */}
+      <section className="company-hero">
+        <video autoPlay loop muted playsInline className="hero-video-bg">
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        
         <div className="hero-overlay-bg"></div>
         <div className="hero-content-box hero-anim">
           <h1>Our Company</h1>
@@ -85,10 +86,7 @@ function WhoWeAre() {
           <div className="benefits-card-3d">
             <ul className="benefits-list">
               <li><span>💰</span> Competitive pay with performance-based incentives</li>
-              <li><span>🏥</span> Health insurance with wide network access whosoever need it</li>
               <li><span>🔒</span> (Optional) Disability coverage for income protection</li>
-              <li><span>🌴</span> Annually travel insurance will be reimbursed for every member.</li>
-              <li><span>🚚</span> Weekly pay cheques with no delays</li>
               <li><span>📈</span> If you wait, you will get paid.</li>
               <li><span>📚</span> Detention/layover/waiting will be paid</li>
             </ul>
