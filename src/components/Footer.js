@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* ================= RIGHT SECTION: SOCIALS & LINKS ================= */}
-        <div className="footer-right">
+        /*<div className="footer-right">
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
@@ -86,7 +86,7 @@ const Footer = () => {
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-          </div>
+          </div> */
 
           <div className="quick-links-section">
             <span className="quick-links-title">Quick links</span>
