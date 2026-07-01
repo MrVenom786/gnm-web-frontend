@@ -40,7 +40,7 @@ function Founder() {
   return (
     <div className="gnm-founder-page">
 
-      {/* HERO SECTION */}
+      {/* ================= HERO SECTION (KEPT EXACTLY THE SAME) ================= */}
       <section className="gnm-hero">
         <video autoPlay loop muted playsInline className="hero-video">
           <source src={heroVideo} type="video/mp4" />
@@ -52,110 +52,135 @@ function Founder() {
         </div>
       </section>
 
-      {/* MAIN CONTENT WRAPPER */}
-      <div className="content-wrapper">
+      {/* ================= NEW UI: MAIN CONTENT WRAPPER ================= */}
+      <div className="modern-content-wrapper">
 
-        {/* STORY / PHILOSOPHY SECTION */}
-        <section className="founder-story reveal-up" ref={(el) => (sectionsRef.current[0] = el)}>
-          <div className="story-text">
-            <h2>The Philosophy Behind GNM</h2>
+        {/* --- NEW UI: OVERLAPPING STORY SECTION --- */}
+        <section className="modern-story-section reveal-up" ref={(el) => (sectionsRef.current[0] = el)}>
+          <div className="story-overlap-container">
+            <div className="story-image-panel">
+              <img src={storyImages[storyIndex]} alt={`Showcase Visual ${storyIndex + 1}`} />
+            </div>
+            
+            <div className="story-text-panel">
+              <h2 className="gold-accent-title">Architecting Modern Transport</h2>
+              <div className="text-divider"></div>
+              <p>
+                True logistical mastery requires seeing beyond the asphalt. We engineer supply chain solutions that demand absolute certainty and flawless execution.
+              </p>
+              <p>
+                Every structural move we make is calculated to maximize velocity, secure valuable assets, and dominate the North American freight network.
+              </p>
 
-            <p>
-              At <strong>GNM Logistics</strong>, leadership is built on discipline,
-              responsibility, and trust — not visibility.
-            </p>
-            <p>
-              Every decision reflects a long-term commitment to drivers, safety,
-              and operational excellence.
-            </p>
-
-            <div className="founder-signature-box">
-              <p className="quote-signoff"></p>
-              
-              <div className="founder-contact">
-                <a href="tel:+16479629995" className="founder-phone">
-                  +1 (647) 962-9995
-                </a>
-                <span className="contact-separator"> | </span>
-                <a href="mailto:gurpreetsaini2885@gmail.com" className="founder-email">
-                  gurpreetsaini2885@gmail.com
-                </a>
+              <div className="modern-contact-bar">
+                <a href="tel:+14372300451">+1 (437) 230-0451</a>
+                <span className="dot-separator">•</span>
+                <a href="mailto:info@gnmlogistics.com">info@gnmlogistics.com</a>
               </div>
             </div>
           </div>
-
-          <div className="story-visual-frame">
-            <img src={storyImages[storyIndex]} alt={`GNM Inspiration ${storyIndex + 1}`} />
-          </div>
         </section>
 
-        {/* JOURNEY / TIMELINE */}
-        <section className="founder-journey reveal-up" ref={(el) => (sectionsRef.current[1] = el)}>
-          <h2>Our Journey</h2>
+        {/* --- NEW UI: VERTICAL TIMELINE SECTION --- */}
+        <section className="modern-timeline-section reveal-up" ref={(el) => (sectionsRef.current[1] = el)}>
+          <div className="section-header-center">
+            <h2>Evolution of our Fleet</h2>
+            <p className="subtitle">From regional routes to continental dominance.</p>
+          </div>
           
-          <div className="journey-grid">
-            <div className="journey-card-3d">
-              <span className="journey-year">2021</span>
-              <p>Started with hands-on trucking operations and industry experience.</p>
+          <div className="vertical-timeline">
+            {/* Timeline Node 1 (Left) */}
+            <div className="timeline-node left-node">
+              <div className="timeline-content">
+                <span className="node-year">Ignition</span>
+                <p>Forged in the fires of heavy-haul routing, our origins are deeply rooted in grueling highway hours.</p>
+              </div>
             </div>
 
-            <div className="journey-card-3d">
-              <span className="journey-year">Experience</span>
-              <p>Built strong financial and operational understanding through real-world challenges.</p>
+            {/* Timeline Node 2 (Right) */}
+            <div className="timeline-node right-node">
+              <div className="timeline-content">
+                <span className="node-year">Strategy</span>
+                <p>Overcoming severe infrastructural hurdles sharpened our unmatched navigational intellect.</p>
+              </div>
             </div>
 
-            <div className="journey-card-3d">
-              <span className="journey-year">Partnership</span>
-              <p>Joined by experienced leadership strengthening safety and operations.</p>
+            {/* Timeline Node 3 (Left) */}
+            <div className="timeline-node left-node">
+              <div className="timeline-content">
+                <span className="node-year">Coalition</span>
+                <p>Merging with elite industry veterans massively amplified our raw operational capacity.</p>
+              </div>
             </div>
 
-            <div className="journey-card-3d highlight-card">
-              <span className="journey-year">March 2025</span>
-              <p>GNM Logistics officially launched with a strict safety and compliance focus.</p>
-            </div>
-
-            <div className="journey-card-3d highlight-card">
-              <span className="journey-year">Achievements</span>
-              <p>Rapid certification and compliance milestones achieved in the first year.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* VALUES */}
-        <section className="founder-values reveal-up" ref={(el) => (sectionsRef.current[2] = el)}>
-          <h2>Guiding Principles</h2>
-
-          <div className="values-grid">
-            <div className="value-card-3d">
-              <h3><span>💡</span> Vision-Driven</h3>
-              <p>Long-term thinking in every decision.</p>
-            </div>
-
-            <div className="value-card-3d">
-              <h3><span>🤝</span> People First</h3>
-              <p>Drivers and partners are treated with respect.</p>
-            </div>
-
-            <div className="value-card-3d">
-              <h3><span>⚖️</span> Integrity</h3>
-              <p>Honesty and transparency in all operations.</p>
-            </div>
-
-            <div className="value-card-3d">
-              <h3><span>🚀</span> Growth</h3>
-              <p>Safe, steady, and sustainable expansion.</p>
+            {/* Timeline Node 4 (Right) */}
+            <div className="timeline-node right-node">
+              <div className="timeline-content">
+                <span className="node-year">The Debut</span>
+                <p>Unleashing our fully optimized, state-of-the-art dispatch network onto the grid.</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="gnm-cta-section reveal-up" ref={(el) => (sectionsRef.current[3] = el)}>
-          <h2>Be Part of the GNM Vision</h2>
-          <p>Join a company built on discipline, safety, and trust.</p>
-          {/* UPDATED: Compact Gold Pill Button */}
-          <Link to="/join/apply" className="apply-btn-pill">
-            Apply Now
-          </Link>
+        {/* --- NEW UI: SPLIT-SCREEN VALUES SECTION --- */}
+        <section className="modern-split-values reveal-up" ref={(el) => (sectionsRef.current[2] = el)}>
+          <div className="split-left">
+            <h2>The GNM Blueprint</h2>
+            <div className="text-divider"></div>
+            <p>Our operational framework is built on non-negotiable standards of excellence. We do not compromise.</p>
+          </div>
+
+          <div className="split-right">
+            <div className="values-grid-compact">
+              <div className="compact-value-card">
+                <div className="icon-header">
+                  <span className="value-icon">⚡</span>
+                  <h3>Lightning Velocity</h3>
+                </div>
+                <p>Swift, unhindered transit directly from terminal to final destination.</p>
+              </div>
+
+              <div className="compact-value-card">
+                <div className="icon-header">
+                  <span className="value-icon">💎</span>
+                  <h3>Diamond Standard</h3>
+                </div>
+                <p>Unquestionable transparency and fierce moral fortitude across all divisions.</p>
+              </div>
+
+              <div className="compact-value-card">
+                <div className="icon-header">
+                  <span className="value-icon">🛡️</span>
+                  <h3>Ironclad Armor</h3>
+                </div>
+                <p>Guarding cargo and personnel with zero compromises or shortcuts.</p>
+              </div>
+
+              <div className="compact-value-card">
+                <div className="icon-header">
+                  <span className="value-icon">🔥</span>
+                  <h3>Relentless Momentum</h3>
+                </div>
+                <p>Pushing boundaries, dominating markets, and expanding our horizons continuously.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* --- NEW UI: HORIZONTAL BANNER CTA --- */}
+        <section className="modern-cta-banner reveal-up" ref={(el) => (sectionsRef.current[3] = el)}>
+          <div className="cta-banner-content">
+            <div className="cta-text-left">
+              <h2>Command the Asphalt</h2>
+              <p>Ready to rule the highways alongside elite professionals? Secure your credentials today.</p>
+            </div>
+            <div className="cta-action-right">
+              <Link to="/join/apply" className="apply-btn-pill banner-btn">
+                Apply Now
+              </Link>
+            </div>
+          </div>
         </section>
 
       </div>
