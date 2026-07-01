@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa"; // Added this import
 import "./Footer.css";
-import { 
-  FaFacebookF, 
-  FaYoutube, 
-  FaTwitter, 
-  FaInstagram, 
-  FaMapMarkerAlt, 
-  FaPhoneAlt, 
-  FaEnvelope 
-} from "react-icons/fa";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -74,7 +66,6 @@ const Footer = () => {
         {/* ================= RIGHT SECTION: SOCIALS & LINKS ================= */}
         <div className="footer-right">
           
-
           <div className="quick-links-section">
             <span className="quick-links-title">Quick links</span>
             <div className="quick-links-grid">
