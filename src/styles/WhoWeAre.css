@@ -261,3 +261,18 @@ h2 {
   opacity: 1;
   transform: translateY(0);
 }
+.company-hero {
+  position: relative;
+  overflow: hidden;
+  /* other existing styles */
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Keep it behind the overlay and content */
+}
