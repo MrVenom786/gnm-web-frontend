@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Contact.css";
-import { FaInstagram, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import {FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import heroVideo from "../assets/gallery/videos/hero.mp4";
 
 function Contact() {
@@ -29,11 +29,7 @@ function Contact() {
           <h3>Email Us</h3>
           <a href="mailto:gurpreetsaini2885@gmail.com">gurpreetsaini2885@gmail.com</a>
         </div>
-        <div className="card">
-          <FaInstagram className="icon" />
-          <h3>Instagram</h3>
-          <a href="https://www.instagram.com/gnmtransport" target="_blank" rel="noreferrer">@gnmtransport</a>
-        </div>
+        
       </section>
 
       {/* INTERACTIVE FORM */}
