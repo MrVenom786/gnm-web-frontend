@@ -5,9 +5,9 @@ import "../../styles/Truckload.css";
 /* VIDEO & IMAGES */
 import heroVideo from "../../assets/gallery/videos/hero.mp4";
 import m1 from "../../assets/gallery/images/gallery7.jpg";
-import m2 from "../../assets/gallery/images/gallery8.jpg";
-import m3 from "../../assets/gallery/images/gallery9.jpg";
-import m4 from "../../assets/gallery/images/gallery10.jpg";
+import m2 from "../../assets/gallery/images/gallery31.jpg";
+import m3 from "../../assets/gallery/images/gallery32.jpg";
+import m4 from "../../assets/gallery/images/gallery35.jpg";
 
 function Truckload() {
   const mainImages = [m1, m2, m3, m4];
