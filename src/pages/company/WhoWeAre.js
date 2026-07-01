@@ -69,8 +69,7 @@ function WhoWeAre() {
           <h2>Who We Are</h2>
           <p>
             GNM is a fast-growing transportation company built with one clear
-            mission — <strong>put drivers and employees first</strong>.  
-            Though we are only <strong>1 year established</strong>, our focus on
+            mission — <strong>put drivers and employees first</strong>. Our focus on
             transparency, performance-based growth, and family values sets us apart.
           </p>
           <p>
