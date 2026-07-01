@@ -72,21 +72,8 @@ const Footer = () => {
         </div>
 
         {/* ================= RIGHT SECTION: SOCIALS & LINKS ================= */}
-        /*<div className="footer-right">
-          <div className="social-icons">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <FaYoutube />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-          </div> */
+        <div className="footer-right">
+          
 
           <div className="quick-links-section">
             <span className="quick-links-title">Quick links</span>
