@@ -70,7 +70,7 @@ function Founder() {
             </p>
 
             <div className="founder-signature-box">
-              <p className="quote-signoff">— Chairperson Gurpreet Singh</p>
+              <p className="quote-signoff"></p>
               
               <div className="founder-contact">
                 <a href="tel:+16479629995" className="founder-phone">
