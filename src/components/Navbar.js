@@ -148,9 +148,7 @@ const Navbar = () => {
                 </span>
                 {(active === "company" || mobileSubMenu === "company") && (
                   <div className="gnm-dropdown">
-                    <Link to="/company/employee-ownership" onClick={closeMenu}>Employee Ownership</Link>
                     <Link to="/company/who-we-are" onClick={closeMenu}>Who We Are</Link>
-                    <Link to="/company/responsibility" onClick={closeMenu}>Corporate Responsibility</Link>
                     <Link to="/company/founder" onClick={closeMenu}>About GNM</Link>
                   </div>
                 )}
