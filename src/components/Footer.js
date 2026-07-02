@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="info-block address-block">
               <FaMapMarkerAlt className="info-icon" />
               <p>
-                Main Office, 20 ENFORD CRESENT,<br />
+                Main Office, 20 ENFORD CRESENT,
                 BRAMPTON, ON L7A4E8
   
               </p>
