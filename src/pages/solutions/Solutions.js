@@ -95,7 +95,7 @@ function Solutions() {
         <section className="solutions-cta reveal-up" ref={(el) => (sectionsRef.current[2] = el)}>
           <h2>Start Shipping With GNM</h2>
           <p>Let our team build a transportation solution tailored to your supply chain.</p>
-          <a href="mailto:info@gnminc.co" className="apply-btn-pill">
+          <a href="mailto:dispatch@gnmtransport.net" className="apply-btn-pill">
             Contact Our Solutions Team
           </a>
         </section>
