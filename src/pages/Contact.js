@@ -27,7 +27,7 @@ function Contact() {
         <div className="card">
           <FaEnvelope className="icon" />
           <h3>Email Us</h3>
-          <a href="mailto:admin@gnmtransport.com">admin@gnmtransport.com</a>
+          <a href="mailto:admin@gnmtransport.net">admin@gnmtransport.net</a>
         </div>
         
       </section>
