@@ -51,7 +51,7 @@ const Footer = () => {
                 <FaPhoneAlt className="info-icon" /> Phone: +1 647 962 9995
               </p>
               <p>
-                <FaEnvelope className="info-icon" /> Email: admin@gnmtransport.com
+                <FaEnvelope className="info-icon" /> Email: admin@gnmtransport.net
               </p>
             </div>
           </div>
