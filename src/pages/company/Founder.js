@@ -75,7 +75,7 @@ function Founder() {
               <div className="modern-contact-bar">
                 <a href="tel:+16479629995">+1 (647) 962-9995</a>
                 <span className="dot-separator">•</span>
-                <a href="mailto:gurpreetsaini2885@gmail.com">gurpreetsaini2885@gmail.com</a>
+                <a href="mailto:admin@gnmtransport.net">admin@gnmtransport.net</a>
               </div>
             </div>
           </div>
